@@ -1,11 +1,67 @@
 package com.agoda;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.HashMap;
+import java.util.Properties;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class PasswordChanger {
+
+	private String password;
+
+	public PasswordChanger() {
+		Properties properties = new Properties();
+		try {
+			properties.load(new FileReader(new File(System.getProperty("user.dir") + "\\Authentication.properties")));
+			this.password = properties.getProperty("password");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public  String getPassword() {
+		return this.password;
+	}
+
+	public Boolean changePassword(String oldPassword, String newPassword) {
+
+		if (!oldPassword.equals(password)) {
+			System.out.println("Wrong oldPassword");
+			return false;
+		}else if(!isValidPassword(newPassword))
+		{
+			System.err.println("Change Password not satisfies the condition:" +newPassword );
+			return false;
+		}
+		
+		else
+		{
+			System.err.println("Change Password  satisfies the condition:" +newPassword );
+		}
+		
+
+		return true;
+	}
+
+	private Boolean isValidPassword(String password) {
+
+		if (hasPasswordGreatherThan17(password) && hasUpperLowerDigitSPecialChar(password)
+				&& !hasRepeatedCharMoreThanFour(password) && !hasAllowdedSpecialCharMoreThanFour(password)
+				&& !hasPasswordMoreThan50PercentDigits(password))
+			return true;
+		else
+			return false;
+
+	}
 
 	/*
 	 * The Following Method returns true if any character repeated more than 4 times
@@ -115,7 +171,7 @@ public class PasswordChanger {
 
 		return false;
 	}
-	
+
 	public static int getDigitsCount(String password) {
 		Pattern p = Pattern.compile("[0-9]");
 		Matcher m = p.matcher(password);
@@ -142,13 +198,22 @@ public class PasswordChanger {
 	}
 
 	public static void main(String args[]) {
-		System.out.println("is Repeated Char more than 4: " + hasRepeatedCharMoreThanFour("shivashivashivashivaa"));
-		System.out.println("Special Char Count:" + hasAllowdedSpecialCharMoreThanFour("shiva#$%@!!"));
-		System.err.println("hasUpperLowerDigitSPecialChar:" + hasUpperLowerDigitSPecialChar("shiva#$%@!!"));
-
-		System.out
-				.println("hasPasswordMoreThan50PercentDigits:" + hasPasswordMoreThan50PercentDigits("SHivaoleti1234!"));
-
+		/*
+		 * System.out.println("is Repeated Char more than 4: " +
+		 * hasRepeatedCharMoreThanFour("shivashivashivashivaa"));
+		 * System.out.println("Special Char Count:" +
+		 * hasAllowdedSpecialCharMoreThanFour("shiva#$%@!!"));
+		 * System.err.println("hasUpperLowerDigitSPecialChar:" +
+		 * hasUpperLowerDigitSPecialChar("shiva#$%@!!"));
+		 * 
+		 * System.out .println("hasPasswordMoreThan50PercentDigits:" +
+		 * hasPasswordMoreThan50PercentDigits("SHivaoleti1234!"));
+		 */
+		
+		PasswordChanger pwd=new PasswordChanger();
+		String oldPasword=pwd.getPassword();
+		pwd.changePassword(oldPasword, "shiva@1#1234HJKILejkbnvfrdsaghj");
+		
 	}
 
 }

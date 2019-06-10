@@ -50,14 +50,5 @@ public class App
 		return count;
 	}
 
-	public static int getDigitsCount(String password) {
-		Pattern p = Pattern.compile("[0-9]");
-		Matcher m = p.matcher(password);
-		int count = 0;
-		while (m.find()) {
-			count = count + 1;
-		}
-		System.out.println("no of Digit Count:" + count);
-		return count;
-	}
+	
 }
