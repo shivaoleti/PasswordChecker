@@ -2,21 +2,26 @@ package com.agoda;
 
 import static org.junit.Assert.*;
 
+import org.apache.log4j.Logger;
+import org.apache.log4j.xml.DOMConfigurator;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class PasswordChangeTest {
 
 	static PasswordChanger passwordChanger;
-
+	private static final Logger LOGGER = Logger.getLogger(PasswordChangeTest.class.getName());
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
+		DOMConfigurator.configure("./log/log4j.xml");
 		passwordChanger = new PasswordChanger();
 	}
 
 	@Test
 	public void validpasswordTest() {
+		LOGGER.info("-------validPasswordTest Started--------");
 		assertTrue(passwordChanger.changePassword(passwordChanger.getPassword(), "shivaASD12asabcdefgmnoA@1"));
+		LOGGER.info("-------validPasswordTest Ended--------");
 	}
 
 	@Test

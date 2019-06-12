@@ -6,10 +6,14 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.apache.log4j.Logger;
+
 public class PasswordChanger {
+	private static final Logger LOGGER = Logger.getLogger(PasswordChanger.class.getName());
 	private String password;
 
 	public PasswordChanger() {
+		LOGGER.info("------------Properties File Loaded To Read System Mock Password-----------");
 		Properties properties = new Properties();
 		try {
 			properties.load(new FileReader(new File(System.getProperty("user.dir") + "\\Authentication.properties")));
