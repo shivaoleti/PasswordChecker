@@ -6,14 +6,15 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 
 public class PasswordChanger {
-	private static final Logger LOGGER = Logger.getLogger(PasswordChanger.class.getName());
+	private static final Logger logger = Logger.getLogger(PasswordChanger.class.getName());
 	private String password;
 
 	public PasswordChanger() {
-		LOGGER.info("------------Properties File Loaded To Read System Mock Password-----------");
+		logger.info("------------Properties File Loaded To Read System Mock Password-----------");
 		Properties properties = new Properties();
 		try {
 			properties.load(new FileReader(new File(System.getProperty("user.dir") + "\\Authentication.properties")));
@@ -41,12 +42,25 @@ public class PasswordChanger {
 			System.err.println("Change Password not satisfies the condition:" + newPassword);
 			return false;
 		}
+		else if(getPasswordSimilarity(newPassword)>=80)
+			return false;
 
 		else {
 			System.err.println("Change Password  satisfies the condition:" + newPassword);
 		}
 
 		return true;
+	}
+	
+	float getPasswordSimilarity(String newPassword)
+	{
+		int noOfchars=StringUtils.getLevenshteinDistance(newPassword,getPassword() );
+		logger.info("new Password:"+newPassword);
+		logger.info("system Password:"+getPassword());
+		logger.info("no of chars not matched:"+noOfchars);
+		float similarity=(float)(getPassword().length()-noOfchars)/getPassword().length();
+		logger.info("Password Similarity:"+similarity);
+		return (similarity)*100;
 	}
 
 }
