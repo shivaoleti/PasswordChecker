@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <parameter name="archive.testng.metrics.report" value="true"/>
+  <test thread-count="5" name="Test(failed)">
+    <parameter name="sUsername" value="testuser_1"/>
+    <parameter name="sPassword" value="Test@123"/>
+    <classes>
+      <class name="com.agoda.FunctionalSample">
+        <methods>
+          <include name="afterClass"/>
+          <include name="dataProviderTest" invocation-numbers="1"/>
+          <include name="beforeClass"/>
+        </methods>
+      </class> <!-- com.agoda.FunctionalSample -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

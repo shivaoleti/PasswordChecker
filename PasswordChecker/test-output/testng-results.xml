@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="11" passed="11">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="5313" started-at="2019-06-18T06:34:12 IST" finished-at="2019-06-18T06:34:18 IST">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="5313" started-at="2019-06-18T06:34:12 IST" finished-at="2019-06-18T06:34:18 IST">
+      <class name="com.agoda.PasswordChangeTestNG">
+        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.agoda.PasswordChangeTestNG@56235b8e]" name="setUpBeforeClass" is-config="true" duration-ms="127" started-at="2019-06-18T06:34:12 IST" finished-at="2019-06-18T06:34:12 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpBeforeClass -->
+        <test-method status="PASS" signature="passwordWithAllDigits()[pri:0, instance:com.agoda.PasswordChangeTestNG@56235b8e]" name="passwordWithAllDigits" duration-ms="26" started-at="2019-06-18T06:34:13 IST" finished-at="2019-06-18T06:34:13 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- passwordWithAllDigits -->
+        <test-method status="PASS" signature="passwordWithAllSpecialChars()[pri:0, instance:com.agoda.PasswordChangeTestNG@56235b8e]" name="passwordWithAllSpecialChars" duration-ms="16" started-at="2019-06-18T06:34:13 IST" finished-at="2019-06-18T06:34:13 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- passwordWithAllSpecialChars -->
+        <test-method status="PASS" signature="passwordWithLessThan17Characters()[pri:0, instance:com.agoda.PasswordChangeTestNG@56235b8e]" name="passwordWithLessThan17Characters" duration-ms="16" started-at="2019-06-18T06:34:13 IST" finished-at="2019-06-18T06:34:13 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- passwordWithLessThan17Characters -->
+        <test-method status="PASS" signature="passwordWithMoreThan50PercenOfDigits()[pri:0, instance:com.agoda.PasswordChangeTestNG@56235b8e]" name="passwordWithMoreThan50PercenOfDigits" duration-ms="15" started-at="2019-06-18T06:34:13 IST" finished-at="2019-06-18T06:34:13 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- passwordWithMoreThan50PercenOfDigits -->
+        <test-method status="PASS" signature="passwordWithNoDigits()[pri:0, instance:com.agoda.PasswordChangeTestNG@56235b8e]" name="passwordWithNoDigits" duration-ms="0" started-at="2019-06-18T06:34:13 IST" finished-at="2019-06-18T06:34:13 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- passwordWithNoDigits -->
+        <test-method status="PASS" signature="passwordWithNoLowerCase()[pri:0, instance:com.agoda.PasswordChangeTestNG@56235b8e]" name="passwordWithNoLowerCase" duration-ms="16" started-at="2019-06-18T06:34:13 IST" finished-at="2019-06-18T06:34:13 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- passwordWithNoLowerCase -->
+        <test-method status="PASS" signature="passwordWithNotAllowdedSpecialChars()[pri:0, instance:com.agoda.PasswordChangeTestNG@56235b8e]" name="passwordWithNotAllowdedSpecialChars" duration-ms="0" started-at="2019-06-18T06:34:13 IST" finished-at="2019-06-18T06:34:13 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- passwordWithNotAllowdedSpecialChars -->
+        <test-method status="PASS" signature="passwordWithNoUpperCase()[pri:0, instance:com.agoda.PasswordChangeTestNG@56235b8e]" name="passwordWithNoUpperCase" duration-ms="0" started-at="2019-06-18T06:34:13 IST" finished-at="2019-06-18T06:34:13 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- passwordWithNoUpperCase -->
+        <test-method status="PASS" signature="passwordWithSpecialCharsMoreThan4()[pri:0, instance:com.agoda.PasswordChangeTestNG@56235b8e]" name="passwordWithSpecialCharsMoreThan4" duration-ms="0" started-at="2019-06-18T06:34:13 IST" finished-at="2019-06-18T06:34:13 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- passwordWithSpecialCharsMoreThan4 -->
+        <test-method status="PASS" signature="validpasswordTest()[pri:0, instance:com.agoda.PasswordChangeTestNG@56235b8e]" name="validpasswordTest" duration-ms="15" started-at="2019-06-18T06:34:13 IST" finished-at="2019-06-18T06:34:13 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validpasswordTest -->
+        <test-method status="PASS" signature="passwordWithWrongSystemPassword()[pri:0, instance:com.agoda.PasswordChangeTestNG@56235b8e]" name="passwordWithWrongSystemPassword" duration-ms="0" started-at="2019-06-18T06:34:13 IST" finished-at="2019-06-18T06:34:13 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- passwordWithWrongSystemPassword -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.agoda.PasswordChangeTestNG@56235b8e]" name="afterClass" is-config="true" duration-ms="5003" started-at="2019-06-18T06:34:13 IST" finished-at="2019-06-18T06:34:18 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- com.agoda.PasswordChangeTestNG -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

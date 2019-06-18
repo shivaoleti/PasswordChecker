@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <parameter name="archive.testng.metrics.report" value="true"/>
+  <test thread-count="5" name="PasswordValidationTest(failed)">
+    <classes>
+      <class name="com.agoda.PasswordChangeTestNG">
+        <methods>
+          <include name="setUpBeforeClass"/>
+          <include name="afterClass"/>
+          <include name="passwordWithsimilarity"/>
+        </methods>
+      </class> <!-- com.agoda.PasswordChangeTestNG -->
+    </classes>
+  </test> <!-- PasswordValidationTest(failed) -->
+</suite> <!-- Failed suite [Suite] -->

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="1" ignored="0" total="14" passed="13">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="5326" started-at="2019-06-18T06:50:55 IST" finished-at="2019-06-18T06:51:01 IST">
+    <groups>
+    </groups>
+    <test name="PasswordValidationTest" duration-ms="5326" started-at="2019-06-18T06:50:55 IST" finished-at="2019-06-18T06:51:01 IST">
+      <class name="com.agoda.PasswordChangeTestNG">
+        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.agoda.PasswordChangeTestNG@4e9ba398]" name="setUpBeforeClass" is-config="true" duration-ms="125" started-at="2019-06-18T06:50:55 IST" finished-at="2019-06-18T06:50:55 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpBeforeClass -->
+        <test-method status="PASS" signature="dataProviderTestWithNegativeConditions(java.lang.String)[pri:0, instance:com.agoda.PasswordChangeTestNG@4e9ba398]" name="dataProviderTestWithNegativeConditions" duration-ms="25" started-at="2019-06-18T06:50:55 IST" data-provider="dataProviderTest" finished-at="2019-06-18T06:50:55 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ ]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- dataProviderTestWithNegativeConditions -->
+        <test-method status="PASS" signature="dataProviderTestWithNegativeConditions(java.lang.String)[pri:0, instance:com.agoda.PasswordChangeTestNG@4e9ba398]" name="dataProviderTestWithNegativeConditions" duration-ms="16" started-at="2019-06-18T06:50:55 IST" data-provider="dataProviderTest" finished-at="2019-06-18T06:50:55 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[qwerty@A45sssss6*kladaedef]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- dataProviderTestWithNegativeConditions -->
+        <test-method status="PASS" signature="passwordWithAllDigits()[pri:0, instance:com.agoda.PasswordChangeTestNG@4e9ba398]" name="passwordWithAllDigits" duration-ms="0" started-at="2019-06-18T06:50:55 IST" finished-at="2019-06-18T06:50:55 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- passwordWithAllDigits -->
+        <test-method status="PASS" signature="passwordWithAllSpecialChars()[pri:0, instance:com.agoda.PasswordChangeTestNG@4e9ba398]" name="passwordWithAllSpecialChars" duration-ms="0" started-at="2019-06-18T06:50:55 IST" finished-at="2019-06-18T06:50:55 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- passwordWithAllSpecialChars -->
+        <test-method status="PASS" signature="passwordWithLessThan17Characters()[pri:0, instance:com.agoda.PasswordChangeTestNG@4e9ba398]" name="passwordWithLessThan17Characters" duration-ms="0" started-at="2019-06-18T06:50:55 IST" finished-at="2019-06-18T06:50:55 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- passwordWithLessThan17Characters -->
+        <test-method status="PASS" signature="passwordWithMoreThan50PercenOfDigits()[pri:0, instance:com.agoda.PasswordChangeTestNG@4e9ba398]" name="passwordWithMoreThan50PercenOfDigits" duration-ms="0" started-at="2019-06-18T06:50:55 IST" finished-at="2019-06-18T06:50:55 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- passwordWithMoreThan50PercenOfDigits -->
+        <test-method status="PASS" signature="passwordWithNoDigits()[pri:0, instance:com.agoda.PasswordChangeTestNG@4e9ba398]" name="passwordWithNoDigits" duration-ms="0" started-at="2019-06-18T06:50:55 IST" finished-at="2019-06-18T06:50:55 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- passwordWithNoDigits -->
+        <test-method status="PASS" signature="passwordWithSpecialCharsMoreThan4()[pri:0, instance:com.agoda.PasswordChangeTestNG@4e9ba398]" name="passwordWithSpecialCharsMoreThan4" duration-ms="0" started-at="2019-06-18T06:50:55 IST" finished-at="2019-06-18T06:50:55 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- passwordWithSpecialCharsMoreThan4 -->
+        <test-method status="PASS" signature="passwordWithNoUpperCase()[pri:0, instance:com.agoda.PasswordChangeTestNG@4e9ba398]" name="passwordWithNoUpperCase" duration-ms="0" started-at="2019-06-18T06:50:55 IST" finished-at="2019-06-18T06:50:55 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- passwordWithNoUpperCase -->
+        <test-method status="PASS" signature="passwordWithNotAllowdedSpecialChars()[pri:0, instance:com.agoda.PasswordChangeTestNG@4e9ba398]" name="passwordWithNotAllowdedSpecialChars" duration-ms="0" started-at="2019-06-18T06:50:55 IST" finished-at="2019-06-18T06:50:55 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- passwordWithNotAllowdedSpecialChars -->
+        <test-method status="PASS" signature="passwordWithWrongSystemPassword()[pri:0, instance:com.agoda.PasswordChangeTestNG@4e9ba398]" name="passwordWithWrongSystemPassword" duration-ms="16" started-at="2019-06-18T06:50:55 IST" finished-at="2019-06-18T06:50:56 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- passwordWithWrongSystemPassword -->
+        <test-method status="PASS" signature="passwordWithNoLowerCase()[pri:0, instance:com.agoda.PasswordChangeTestNG@4e9ba398]" name="passwordWithNoLowerCase" duration-ms="0" started-at="2019-06-18T06:50:55 IST" finished-at="2019-06-18T06:50:55 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- passwordWithNoLowerCase -->
+        <test-method status="FAIL" signature="passwordWithsimilarity()[pri:0, instance:com.agoda.PasswordChangeTestNG@4e9ba398]" name="passwordWithsimilarity" duration-ms="0" started-at="2019-06-18T06:50:56 IST" finished-at="2019-06-18T06:50:56 IST">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[did not expect to find [false] but found [true]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: did not expect to find [false] but found [true]
+at org.testng.Assert.fail(Assert.java:97)
+at org.testng.Assert.failNotEquals(Assert.java:969)
+at org.testng.Assert.assertFalse(Assert.java:65)
+at org.testng.Assert.assertFalse(Assert.java:75)
+at com.agoda.PasswordChangeTestNG.passwordWithsimilarity(PasswordChangeTestNG.java:84)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:131)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:570)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:170)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:790)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:143)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at org.testng.TestRunner.privateRun(TestRunner.java:763)
+at org.testng.TestRunner.run(TestRunner.java:594)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:398)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:392)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1146)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1067)
+at org.testng.TestNG.runSuites(TestNG.java:997)
+at org.testng.TestNG.run(TestNG.java:965)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- passwordWithsimilarity -->
+        <test-method status="PASS" signature="validpasswordTest()[pri:0, instance:com.agoda.PasswordChangeTestNG@4e9ba398]" name="validpasswordTest" duration-ms="15" started-at="2019-06-18T06:50:56 IST" finished-at="2019-06-18T06:50:56 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validpasswordTest -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.agoda.PasswordChangeTestNG@4e9ba398]" name="afterClass" is-config="true" duration-ms="5005" started-at="2019-06-18T06:50:56 IST" finished-at="2019-06-18T06:51:01 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- com.agoda.PasswordChangeTestNG -->
+    </test> <!-- PasswordValidationTest -->
+  </suite> <!-- Suite -->
+</testng-results>
