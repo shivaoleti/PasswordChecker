@@ -38,29 +38,28 @@ public class PasswordChanger {
 		if (!oldPassword.equals(getPassword())) {
 			System.out.println("Wrong oldPassword");
 			return false;
-		} else if (!PasswordChangeValidationUtils.isValidPassword(newPassword)) {
+		} else if (PasswordChangeValidationUtils.isValidPassword(newPassword)) {
 			System.err.println("Change Password not satisfies the condition:" + newPassword);
-			return false;
+			return true;
 		}
-		else if(getPasswordSimilarity(newPassword)>=80)
-			return false;
+		else if(PasswordChangeValidationUtils.passwordSimilarity(newPassword)>=80)
+			return true;
 
 		else {
 			System.err.println("Change Password  satisfies the condition:" + newPassword);
 		}
 
-		return true;
+		return false;
 	}
 	
-	float getPasswordSimilarity(String newPassword)
-	{
-		int noOfchars=StringUtils.getLevenshteinDistance(newPassword,getPassword() );
-		logger.info("new Password:"+newPassword);
-		logger.info("system Password:"+getPassword());
-		logger.info("no of chars not matched:"+noOfchars);
-		float similarity=(float)(getPassword().length()-noOfchars)/getPassword().length();
-		logger.info("Password Similarity:"+similarity);
-		return (similarity)*100;
-	}
+	/*
+	 * float getPasswordSimilarity(String newPassword) { int
+	 * noOfchars=StringUtils.getLevenshteinDistance(newPassword,getPassword() );
+	 * logger.info("new Password:"+newPassword);
+	 * logger.info("system Password:"+getPassword());
+	 * logger.info("no of chars not matched:"+noOfchars); float
+	 * similarity=(float)(getPassword().length()-noOfchars)/getPassword().length();
+	 * logger.info("Password Similarity:"+similarity); return (similarity)*100; }
+	 */
 
 }

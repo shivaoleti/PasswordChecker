@@ -47,7 +47,7 @@ public class PasswordChangeTest {
 	@Test
 	public void passwordSimilarity()
 	{
-		LOGGER.info("Password Similarity:"+passwordChanger.getPasswordSimilarity("shivaOli@891234Shiva"));
+		LOGGER.info("Password Similarity:"+passwordChanger.changePassword(passwordChanger.getPassword(), "shivaOleti@12345Shiva"));
 		
 	}
 

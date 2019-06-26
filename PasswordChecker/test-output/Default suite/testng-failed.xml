@@ -3,16 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.agoda.FunctionalSample">
+      <class name="com.agoda.PasswordChangeTestNG">
         <methods>
-          <include name="failingTest"/>
-          <include name="passingTest"/>
+          <include name="setUpBeforeClass"/>
+          <include name="inValidPreviouspasswordTest"/>
           <include name="afterClass"/>
-          <include name="skippingTest"/>
-          <include name="dataProviderTest"/>
-          <include name="beforeClass"/>
         </methods>
-      </class> <!-- com.agoda.FunctionalSample -->
+      </class> <!-- com.agoda.PasswordChangeTestNG -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

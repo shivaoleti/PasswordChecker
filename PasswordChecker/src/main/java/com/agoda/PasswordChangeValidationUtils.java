@@ -6,15 +6,16 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.text.similarity.JaroWinklerDistance;
+import org.apache.log4j.Logger;
 
 public class PasswordChangeValidationUtils {
-	
-	
-	public static Boolean  isValidPassword(String password) {
+	private static final Logger logger = Logger.getLogger(PasswordChangeValidationUtils.class.getName());
+	public static Boolean isValidPassword(String password) {
 
 		if (hasPasswordGreatherThan17(password) && hasUpperLowerDigitSPecialChar(password)
 				&& !hasRepeatedCharMoreThanFour(password) && !hasAllowdedSpecialCharMoreThanFour(password)
-				&& !hasPasswordMoreThan50PercentDigits(password) &&!hasHavingnotAllowdedSpecialChars(password))
+				&& !hasPasswordMoreThan50PercentDigits(password) && !hasHavingnotAllowdedSpecialChars(password))
 			return true;
 		else
 			return false;
@@ -39,7 +40,7 @@ public class PasswordChangeValidationUtils {
 
 		Set<Character> keys = charArray.keySet();
 		for (char ch : keys) {
-			//System.out.println(charArray.get(ch));
+			// System.out.println(charArray.get(ch));
 			if (charArray.get(ch) > 4)
 				return true;
 		}
@@ -57,10 +58,9 @@ public class PasswordChangeValidationUtils {
 		else
 			return false;
 	}
-	
+
 	/*
-	 * return true - password has UpperCase
-	 * return false - password has no UpperCase
+	 * return true - password has UpperCase return false - password has no UpperCase
 	 */
 
 	private static Boolean hasUpperCaseCharacter(String password) {
@@ -73,10 +73,9 @@ public class PasswordChangeValidationUtils {
 
 		return false;
 	}
-	
+
 	/*
-	 * return true - password has LowerCase
-	 * return false - password has no LowerCase
+	 * return true - password has LowerCase return false - password has no LowerCase
 	 */
 
 	private static Boolean hasLowerCaseCharacter(String password) {
@@ -89,10 +88,9 @@ public class PasswordChangeValidationUtils {
 
 		return false;
 	}
-	
+
 	/*
-	 * return true - password has digits
-	 * return false - password has no digits
+	 * return true - password has digits return false - password has no digits
 	 */
 
 	private static Boolean hasDigits(String password) {
@@ -107,10 +105,10 @@ public class PasswordChangeValidationUtils {
 	}
 
 	/*
-	 * return true - password has allowed special chars
-	 * return false - password has no allowed special chars
+	 * return true - password has allowed special chars return false - password has
+	 * no allowed special chars
 	 */
-	
+
 	private static Boolean hasAnyOfAllowdedSpecialChars(String password) {
 		for (int i = 0; i < password.length(); i++) {
 			char ch = password.charAt(i);
@@ -121,7 +119,7 @@ public class PasswordChangeValidationUtils {
 
 		return false;
 	}
-	
+
 	public static Boolean hasHavingnotAllowdedSpecialChars(String password) {
 		Pattern p = Pattern.compile("[^a-z0-9!@&#$*]", Pattern.CASE_INSENSITIVE);
 		Matcher m = p.matcher(password);
@@ -134,12 +132,13 @@ public class PasswordChangeValidationUtils {
 			return true;
 		return false;
 	}
-	
+
 	/*
-	 * return true - password has upper,lower,special and digit characters
-	 * return false - password has any of upper,lower,special and digit characters doesn't have
+	 * return true - password has upper,lower,special and digit characters return
+	 * false - password has any of upper,lower,special and digit characters doesn't
+	 * have
 	 */
-	
+
 	private static Boolean hasUpperLowerDigitSPecialChar(String password) {
 
 		if (hasUpperCaseCharacter(password) && hasLowerCaseCharacter(password) && hasDigits(password)
@@ -149,10 +148,10 @@ public class PasswordChangeValidationUtils {
 			return false;
 
 	}
-	
+
 	/*
-	 * return true - password has allowed special characters more than 4
-	 * return false - password has allowed special characters less than or equal to 4
+	 * return true - password has allowed special characters more than 4 return
+	 * false - password has allowed special characters less than or equal to 4
 	 */
 
 	public static Boolean hasAllowdedSpecialCharMoreThanFour(String password) {
@@ -168,7 +167,7 @@ public class PasswordChangeValidationUtils {
 
 		return false;
 	}
-	
+
 	/*
 	 * return no of digits in password
 	 */
@@ -183,24 +182,48 @@ public class PasswordChangeValidationUtils {
 		System.out.println("no of Digit Count:" + count);
 		return count;
 	}
-	
+
 	/*
-	 * return true -- if password has more than 50% of digits in length
-	 * return false - if password has less than or equal 50% of digits in length
+	 * return true -- if password has more than 50% of digits in length return false
+	 * - if password has less than or equal 50% of digits in length
 	 */
 
 	public static Boolean hasPasswordMoreThan50PercentDigits(String password) {
 		System.out.println("*********************");
-		Float value = (float)(getDigitsCount(password) / (float) password.length());
+		Float value = (float) (getDigitsCount(password) / (float) password.length());
 		System.out.println("Value:" + value);
 
 		System.out.println("*********************");
-		if ((float) (getDigitsCount(password) /(float) password.length()) * 100 > 50)
+		if ((float) (getDigitsCount(password) / (float) password.length()) * 100 > 50)
 			return true;
 		return false;
 	}
+
+	/* returns password similarity */
 	
+	/**
+	     * distance.apply(null, null)          = IllegalArgumentException
+	    * distance.apply("","")               = 0.0
+	    * distance.apply("","a")              = 0.0
+	* distance.apply("aaapppp", "")       = 0.0
+	* distance.apply("frog", "fog")       = 0.93
+ 	* distance.apply("fly", "ant")        = 0.0
+	* distance.apply("elephant", "hippo") = 0.44
+	* distance.apply("hippo", "elephant") = 0.44
+	* distance.apply("hippo", "zzzzzzzz") = 0.0
+	distance.apply("hello", "hallo")    = 0.88
+	distance.apply("ABC Corporation", "ABC Corp") = 0.93
+	distance.apply("D N H Enterprises Inc", "D &amp; H Enterprises, Inc.") = 0.95
+	distance.apply("My Gym Children's Fitness Center", "My Gym. Childrens Fitness") = 0.92
+	distance.apply("PENNSYLVANIA", "PENNCISYLVNIA")    = 0.88
 	
-	
+	 /**
+*/
+	public static double passwordSimilarity(String newPassword) {
+
+		JaroWinklerDistance j = new JaroWinklerDistance();
+		logger.info("Password Similarity:"+j.apply(new PasswordChanger().getPassword(), newPassword) * 100);
+		return j.apply(new PasswordChanger().getPassword(), newPassword) * 100;
+	}
 
 }

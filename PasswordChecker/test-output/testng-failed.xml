@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
-  <parameter name="archive.testng.metrics.report" value="true"/>
-  <test thread-count="5" name="Test(failed)">
-    <parameter name="sUsername" value="testuser_1"/>
-    <parameter name="sPassword" value="Test@123"/>
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.agoda.FunctionalSample">
+      <class name="com.agoda.PasswordChangeTestNG">
         <methods>
+          <include name="setUpBeforeClass"/>
+          <include name="inValidPreviouspasswordTest"/>
           <include name="afterClass"/>
-          <include name="dataProviderTest" invocation-numbers="1"/>
-          <include name="beforeClass"/>
         </methods>
-      </class> <!-- com.agoda.FunctionalSample -->
+      </class> <!-- com.agoda.PasswordChangeTestNG -->
     </classes>
-  </test> <!-- Test(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

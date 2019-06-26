@@ -28,7 +28,21 @@ public class PasswordChangeTestNG {
 		Assert.assertTrue(passwordChanger.changePassword(passwordChanger.getPassword(), "shivaASD12asabcdefgmnoA@1"));
 		LOGGER.info("-------validPasswordTest Ended--------");
 	}
+	
+	@Test
+	public void inValidPreviouspasswordTest() {
+		LOGGER.info("-------This test should fail--------");
+		Assert.assertTrue(passwordChanger.changePassword("shivaoletiklmnoA@1", "shivaASD12asabcdefgmnoA@1"));
+		LOGGER.info("-------validPasswordTest Ended--------");
+	}
 
+	@Test
+	public void emptynewPassword() {
+		LOGGER.info("-------This test should fail--------");
+		Assert.assertTrue(passwordChanger.changePassword(passwordChanger.getPassword(), " "));
+		LOGGER.info("-------validPasswordTest Ended--------");
+	}
+	
 	@Test
 	public void passwordWithLessThan17Characters() {
 		Assert.assertTrue(passwordChanger.changePassword(passwordChanger.getPassword(), "shivaoletiklmnoA@1"));
@@ -51,7 +65,7 @@ public class PasswordChangeTestNG {
 
 	@Test
 	public void passwordWithMoreThan50PercenOfDigits() {
-		Assert.assertFalse(passwordChanger.changePassword(passwordChanger.getPassword(), "shivaOleti@1234567893456"));
+		Assert.assertTrue(passwordChanger.changePassword(passwordChanger.getPassword(), "shivaOleti@1234567893456"));
 	}
 
 	@Test
@@ -81,8 +95,7 @@ public class PasswordChangeTestNG {
 
 	@Test
 	public void passwordWithsimilarity() {
-		Assert.assertFalse(
-				passwordChanger.changePassword(passwordChanger.getPassword(), "shivaOleti@12345Shivaoleti987"));
+		Assert.assertTrue(passwordChanger.changePassword(passwordChanger.getPassword(), "shivaOleti@12345Shiva"));
 	}
 
 	@DataProvider(name = "dataProviderTest")
@@ -92,8 +105,7 @@ public class PasswordChangeTestNG {
 
 	@Test(dataProvider = "dataProviderTest")
 	public void dataProviderTestWithNegativeConditions(String sPassword) throws InterruptedException {
-		Assert.assertFalse(
-				passwordChanger.changePassword(passwordChanger.getPassword(), sPassword));
+		Assert.assertFalse(passwordChanger.changePassword(passwordChanger.getPassword(), sPassword));
 
 	}
 
